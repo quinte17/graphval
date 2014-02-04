@@ -1,0 +1,50 @@
+.TH GRAPHVAL "1" "May 2009" "graphval" "User Commands"
+.SH NAME
+graphval \- graph evaluation
+.SH SYNOPSIS
+.B graphval
+\fIPLUGIN \flINPUTFILE \fR[\fIPLUGINPARAMETER\fR]...
+.SH COPYRIGHT
+graphval is
+.br
+Copyright (C) 2009 Ludwig Frank
+.br
+Copyright (C) 2009 Stephan Sperber
+.SH DESCRIPTION
+.B graphval
+is a parser for minimalistic dot files. The parsed file is given to a \fBPLUGIN\fR to test and solve different educational problems.
+.SH PLUGIN
+There are several PLUGINs for different uses:
+.PD
+.TP 8
+.BI tp
+treeprint \- Print the parsed tree of the
+.B INPUTFILE
+and exit. It is most likely used for development.
+.TP
+.B dfa
+deterministic finite automaton \- Use
+.B INPUTFILE
+to interpret the dfa or generate output for different languages. See \fIgv_dfa\fP(1) for details.
+.TP
+.B markov
+markov chains \- Generate C or octave output to solve markov chains. See \fIgv_markov\fP(1) for details.
+.PD
+.SH INPUTFILE
+When INPUTFILE is
+.B \-
+read standard input.
+.SH PLUGINPARAMETER
+Some \fBPLUGIN\fRs also have PARAMETERs. See their man page to get more information.
+.SH "SEE ALSO"
+\fIgv_markov\fP(1)
+.br
+\fIlibmarkov\fP(3)
+.br
+\fIgv_dfa\fP(1)
+.br
+\fIdot\fP(1)
+.br
+\fIoctave\fP(1)
+.PD
+

@@ -1,0 +1,17 @@
+digraph my_third_automaton {
+	/* example
+	test
+	*/
+	rankdir = LR
+	node [ shape=circle ];
+	"starter" [
+		label = ""
+		shape = "plaintext"
+	]
+	"zu" [ start="yes" ];				/* startnode */
+	"auf" [ shape=doublecircle end="yes" ];  	/* endnode */
+	// transitions
+	"starter" -> "zu";
+	"zu" -> "auf" [label="tuer aufmachen"];
+	"auf" -> "zu" [label="tuer zumachen"];
+}

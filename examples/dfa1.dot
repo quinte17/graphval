@@ -1,0 +1,17 @@
+digraph my_first_automaton {
+	/* example
+	test
+	*/
+	rankdir = LR
+	node [ shape=circle ];
+	"starter" [
+		label = ""
+		shape = "plaintext"
+	]
+	"k0" [ start="yes" ];				/* startnode */
+	"k1" [ shape=doublecircle end="yes" ];  	/* endnode */
+	// transitions
+	"starter" -> k0;
+	"k0" -> k1 [label=a];
+	"k1" -> "k0" [label="b"];
+}

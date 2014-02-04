@@ -1,0 +1,72 @@
+.TH GV_DFA "1" "May 2009" "graphval" "User Commands"
+.SH NAME
+graphval's deterministic finite automaton plugin
+.SH SYNOPSIS
+.B graphval dfa
+\flINPUTFILE \fR[\fIPARAMETER\fR]...
+.SH COPYRIGHT
+gv_plugin is
+.br
+Copyright (C) 2009 Ludwig Frank
+.br
+Copyright (C) 2009 Stephan Sperber
+.br
+Copyright (C) 2009 Jakob Schäffler
+.SH DESCRIPTION
+.B gv_dfa
+TO BE WRITTEN
+.SH INPUTFILE
+When INPUTFILE is
+.B \-
+read standard input.
+.PD
+.SH PARAMETER
+All following PARAMETERs are exclusive:
+.PD 0
+.TP
+.BI \-i
+interactive mode \- This mode interprets the dfa and validates standard input to meet the dfa requirements.
+.TP
+.BI \-dot
+dot output mode \- Reformat \fBINPUTFILE\fR and write to standard output.
+.TP
+.BI \-c
+C output mode \- Write C-code to standard output. It is suitable to link with the dfa library included in this package.
+.PD 1
+.SH "EXAMPLES"
+The dfa \fB(ab)*a\fR can be represented by the following input:
+.TP
+digraph simpledfa {
+n0 [ start=yes ]
+.br
+n1 [ end=yes ]
+.br
+n0 -> n1 [ label=a ]
+.br
+n1 -> n2 [ label=b ]
+.br
+n2 -> n1 [ label=a ]
+.br
+}
+.TP
+If you want to get an executable for that dfa the following steps are needed:
+.PD 0
+.TP
+.BI 1:
+Generate C output: graphval dfa input.dot -c > output.c
+.TP
+.BI 2:
+Compile and link against libdfa: gcc output.c -ldfa -o mydfa
+.PD 1
+.SH "SEE ALSO"
+\fIgraphval\fP(1)
+.br
+\fIgv_markov\fP(1)
+.br
+\fIlibmarkov\fP(3)
+.br
+\fIdot\fP(1)
+.br
+\fIoctave\fP(1)
+.PD
+

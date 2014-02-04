@@ -1,0 +1,31 @@
+digraph my_second_automaton {
+	/* example
+	test
+	*/
+	rankdir = LR
+	node [ shape=circle ];
+	"starter" [
+		label = ""
+		shape = "plaintext"
+	]
+	"k0" [ start="yes" ];				/* startnode */
+	"k1" [ shape=doublecircle end="yes" ];  	/* endnode */
+		"k2";
+		"k3";
+		"k4";
+		"k5";  
+	
+	// transitions
+	"starter" -> k0;
+	k0 -> k1 [ label=a ]
+	k1 -> k1 [ label=a ]
+	k1 -> k2 [ label=b ]
+	k2 -> k2 [ label=b ]
+	k2 -> k3 [ label=c ]
+	k3 -> k3 [ label=c ]
+	k3 -> k4 [ label=d ]
+	k4 -> k4 [ label=d ]
+	k4 -> k5 [ label=e ]
+	k5 -> k5 [ label=e ]
+	k5 -> k1 [ label=f ]
+}

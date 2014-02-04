@@ -1,0 +1,19 @@
+Needed packages to build:
+- bison
+- flex
+- gcc
+- make
+- libc6-dev
+
+Needed packages to test:
+- graphviz
+- valgrind
+
+To compile graphval type:
+	make
+
+To install graphval type:
+	sudo make install
+
+To uninstall graphval type (always use the same source as installed):
+	sudo make uninstall
